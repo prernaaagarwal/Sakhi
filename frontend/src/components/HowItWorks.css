@@ -1,0 +1,112 @@
+.how-it-works-section {
+  background: var(--bg-section);
+}
+
+.flow-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.flow-step {
+  width: 100%;
+  position: relative;
+}
+
+.step-badge {
+  display: inline-flex;
+  background: var(--brand-gold);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.flow-card {
+  background: var(--bg-card);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.flow-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.flow-icon-container {
+  width: 64px;
+  height: 64px;
+  background: var(--brand-gold-subtle);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.flow-icon {
+  color: var(--brand-gold);
+}
+
+.flow-title {
+  margin-bottom: 1rem;
+}
+
+.flow-description {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.flow-example {
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 0.5rem;
+  border-left: 3px solid var(--brand-gold);
+}
+
+.flow-example .caption {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--brand-gold);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.flow-arrow {
+  font-size: 2rem;
+  color: var(--brand-gold);
+  margin: 0.5rem 0;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .flow-card {
+    padding: 1.5rem;
+  }
+
+  .flow-icon-container {
+    width: 56px;
+    height: 56px;
+  }
+
+  .flow-arrow {
+    font-size: 1.5rem;
+  }
+}

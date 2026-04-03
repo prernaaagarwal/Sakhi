@@ -1,0 +1,139 @@
+.vapi-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.vapi-modal-content {
+  background: var(--bg-card);
+  border-radius: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  height: 90vh;
+  max-height: 900px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease-out;
+  overflow: hidden;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vapi-modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+  color: var(--text-primary);
+}
+
+.vapi-modal-close:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: scale(1.1);
+}
+
+.vapi-modal-header {
+  padding: 2rem 2rem 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+}
+
+.vapi-modal-header h2 {
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.vapi-modal-header p {
+  color: var(--text-secondary);
+}
+
+.vapi-widget-container {
+  flex: 1;
+  min-height: 0;
+  padding: 0;
+  display: flex;
+  position: relative;
+  background: #000000;
+  overflow: hidden;
+}
+
+.vapi-iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  border: none;
+  border-radius: 0 0 1.5rem 1.5rem;
+  flex: 1;
+  display: block;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .vapi-modal-overlay {
+    padding: 0;
+  }
+
+  .vapi-modal-content {
+    max-width: 100%;
+    max-height: 100vh;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .vapi-modal-header {
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .vapi-modal-close {
+    top: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+  }
+
+  .vapi-widget-container {
+    border-radius: 0;
+  }
+}

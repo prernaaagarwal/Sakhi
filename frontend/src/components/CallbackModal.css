@@ -1,0 +1,241 @@
+.callback-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.callback-modal-content {
+  background: var(--bg-card);
+  border-radius: 1.5rem;
+  width: 100%;
+  max-width: 500px;
+  padding: 3rem 2.5rem;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.callback-modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-primary);
+}
+
+.callback-modal-close:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: scale(1.1);
+}
+
+.callback-modal-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.callback-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--brand-gold-light) 0%, var(--brand-gold-subtle) 100%);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.callback-icon-wrapper svg {
+  color: var(--brand-gold);
+}
+
+.callback-modal-header h2 {
+  margin-bottom: 0.5rem;
+}
+
+.callback-modal-header p {
+  color: var(--text-secondary);
+}
+
+.callback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.callback-input {
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--border-input);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  background: var(--bg-card);
+}
+
+.callback-input:focus {
+  outline: none;
+  border-color: var(--brand-gold);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.callback-input.error {
+  border-color: #ef4444;
+}
+
+.callback-input::placeholder {
+  color: var(--text-muted);
+}
+
+.callback-input:disabled {
+  background: rgba(0, 0, 0, 0.05);
+  cursor: not-allowed;
+}
+
+.error-message {
+  font-size: 0.875rem;
+  color: #ef4444;
+  margin-top: -0.25rem;
+}
+
+.callback-submit {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.loading-spinner-small {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.callback-time {
+  text-align: center;
+  color: var(--text-muted);
+  margin-top: -0.5rem;
+}
+
+.callback-success {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.success-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  animation: scaleIn 0.5s ease-out;
+}
+
+.success-icon-wrapper svg {
+  color: white;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.callback-success h3 {
+  margin-bottom: 1rem;
+  color: #10b981;
+}
+
+.callback-success p {
+  color: var(--text-secondary);
+}
+
+.callback-success strong {
+  color: var(--text-primary);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .callback-modal-content {
+    padding: 2.5rem 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .callback-modal-close {
+    top: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+  }
+
+  .callback-icon-wrapper {
+    width: 56px;
+    height: 56px;
+  }
+
+  .success-icon-wrapper {
+    width: 64px;
+    height: 64px;
+  }
+
+  .success-icon-wrapper svg {
+    width: 32px;
+    height: 32px;
+  }
+}
